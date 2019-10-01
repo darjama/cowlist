@@ -1,0 +1,28 @@
+{
+  "name": "cowlist",
+  "version": "1.0.0",
+  "description": "cow lister",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "darjama",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darjama/cowlist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/darjama/cowlist/issues"
+  },
+  "homepage": "https://github.com/darjama/cowlist#readme",
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "node": "^12.11.0",
+    "nodemon": "^1.19.2",
+    "react": "^16.10.0"
+  }
+}
