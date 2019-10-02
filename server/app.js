@@ -2,49 +2,21 @@ var http = require('http');
 var express = require('express')
 var app = express();
 var connection = require('../db')
+var models = require('./models.js')
+var path = require('path')
+var fs = require('fs')
+var bodyParser = require('body-parser')
+
 
 var hostname = 'localhost';
 var port = 3000;
 
-//connection.connect();
+app.use(bodyParser.json());
 
-const httpHandler = (req, res, next = ()=>{}) => {
-  console.log('Serving ' + req.method + ' for url ' + req.url);
+app.get('/api/cows', (req, res) => {models.getAllCows(req, res)} );
 
-  if (req.url === '/api/cows' && req.method === 'GET'){
-    connection.query('SELECT * FROM cows', function (error, results, fields) {
-      if (error) {throw error;}
-      else {
-        console.log(results);
-        res.status(200);
-        res.end();
+app.post('/api/cows', (req, res) => {models.addCow(req, res)} );
 
-      }
-    });
-    next();
-    };
+app.get("/", (req,res) => res.sendFile(path.resolve('../client/index.html')));
 
-  if(req.url === '/api/cows' && req.method === 'POST'){
-    console.log("headers",req.headers)
-    console.log("post",post)
-    console.log("body", req.body)
-    connection.query('INSERT INTO cowlist SET ?', post, function (error, results, fields) {
-      if (error) {throw error;} else {
-
-
-      console.log(connection.query.sql);
-
-      res.setStatus(200)
-      res.end();
-      next();
-      }
-    });
-  }
-}
-
-
-const server = http.createServer(httpHandler);
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(port, () => console.log("node.js serverlistening on port ${port}"));
