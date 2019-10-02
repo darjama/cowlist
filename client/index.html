@@ -1,20 +1,32 @@
 <HTML>
-  <HEAD><title>Daryl's Cow List</title></HEAD>
+  <HEAD><title>Daryl's Cow List</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+    });
+
+    $( window ).on( "load", function() {
+        console.log( "window loaded" );
+    });
+    </script>
+  </HEAD>
 
   <BODY>
 
     <h1>Daryl's CowList</h1>
     <div id="cowDescription"></div>
-    <div><form action="" id="cowForm" method="post">
-      Name:
-      <input type="text" name="New Cow Name" id="cowFormName"><br>
-      Description:
-      <input type="text" name="New Cow Description" id="cowFormDesc"><br>
-      <input type="submit" value="submit new cow"><br>
-      </form></div>
     <div id ="list"></div>
-    <script type = "text/javascript" src="../client/app.js"></script>
-    <script type = "text/javascript" src="../client/cowList.js"></script>
-    <script type = "text/javascript" src="../client/cowListItem.js"></script>
+    <div><h6>Add a Cow</h6></br>
+      <form action="/" id="cowForm" method="post">
+      Name:
+      <input type="text" name="name" id="cowFormName"><br>
+      Description:
+      <input type="text" name="descripion" id="cowFormDesc" maxlength=500><br>
+      <input type="submit" value="submit new cow" id="submit"><br>
+      </form></div>
+    <script type = "text/javascript" src="app.js"></script>
+    <script type = "text/javascript" src="cowList.js"></script>
+    <script type = "text/javascript" src="cowListItem.js"></script>
   </BODY>
 </HTML>
