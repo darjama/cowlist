@@ -16,17 +16,21 @@
 
     <h1>Daryl's CowList</h1>
     <div id="cowDescription"></div>
+    <h3>The list of Cows</h3>
     <div id ="list"></div>
-    <div><h6>Add a Cow</h6></br>
-      <form action="/" id="cowForm" method="post">
+    <div><h3>Add a Cow</h3></br>
+      <form action="/api/cows" id="cowForm" method="post">
       Name:
       <input type="text" name="name" id="cowFormName"><br>
       Description:
       <input type="text" name="descripion" id="cowFormDesc" maxlength=500><br>
       <input type="submit" value="submit new cow" id="submit"><br>
       </form></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
     <script type = "text/javascript" src="app.js"></script>
-    <script type = "text/javascript" src="cowList.js"></script>
-    <script type = "text/javascript" src="cowListItem.js"></script>
+    <script type = "module" src="index.js"></script>
+    <script type = "module" src="cowList.js"></script>
+    <script type = "module" src="cowListItem.js"></script>
   </BODY>
 </HTML>

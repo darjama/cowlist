@@ -1,7 +1,7 @@
-$.get( "/api/cows", function( data ) {
-  $( ".result" ).html( data );
-  console.log( data);
-});
+// $.get( "/api/cows", function( data ) {
+//   $( ".result" ).html( data );
+//   console.log( data);
+// });
 
 
 //var newCowName = document.getElementById("cowFormName").value;
@@ -11,8 +11,30 @@ $.get( "/api/cows", function( data ) {
 //document.getElementById("submit").addEventListener("click", function(){submitForm(newCowName, NewCowDesc)});
 
 //var submitForm = function(cowName, cowDesc) {
-  $.post( "/api/cows",  $( "#cowform" ).serialize(), function( data ) {
-    $( ".result" ).html( data );
-    console.log( data);
+$( "#cowForm").submit(function( event ) {
+  event.preventDefault();
+
+var $form = $( this ),
+term = $form.find( "input[name='s']").val(),
+url = $form.attr("action");
+
+$.ajax({
+  contentType: 'application/json; charset=utf-8',
+  data: JSON.stringify({s:term}),
+  dataType: 'json',
+  success: function(data){
+    app.log("posted to server");
+  },
+  error: function(){
+    app.log("post failed");
+  },
+  type: 'POST',
+  url: url
+ });
+
+
   });
+
 //}
+
+//ReactDOM.render(cowList, document.getElementById('list'));
