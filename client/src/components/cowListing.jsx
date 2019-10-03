@@ -1,7 +1,7 @@
-import React from './react.development';
-import ReactDOM from './react-dom.development';
-import CowList from './cowList.js';
-import CowListItem from  './cowListItem.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import CowList from './cowList.jsx';
+import CowListItem from  './cowListItem.jsx';
 
 class CowListing extends React.Component {
   constructor(props) {
@@ -9,22 +9,18 @@ class CowListing extends React.Component {
     this.state = {gottenCows: []};
   }
 
-
-
   getCows() {
-  $.get( "/api/cows", {
-    beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value', 'Same-site=none', 'Secure')
-    },function( data ) {
+  $.get( "/api/cows", function( data ) {
       //$( ".result" ).html( data );
       console.log(data);
       this.setState({
         gottenCows: data
       });
-    }
-  });
+    });
   }
+
   componentDidMount () {
-    getCows();
+    this.getCows();
   }
   render() {
     return (
@@ -45,5 +41,3 @@ class CowListing extends React.Component {
 }
 
 export default CowListing;
-
-ReactDOM.render(<CowListing cows={this.state.gottenCows}/>, document.getElementById('allReact'));

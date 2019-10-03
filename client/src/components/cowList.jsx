@@ -1,6 +1,5 @@
-import React from './react.development';
-import ReactDOM from './react-dom.development';
-import index from './index';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 function CowList(props) {
   const cowsList = props.cows;

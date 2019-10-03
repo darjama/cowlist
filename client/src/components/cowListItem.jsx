@@ -1,5 +1,5 @@
-import React from './react.development';
-import ReactDOM from './react-dom.development';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 function CowListItem(props) {
   const singleCow = props.cow;
