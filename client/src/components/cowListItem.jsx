@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 function CowListItem(props) {
   const singleCow = props.cow;
   return (
-    <table>{props.singleCow.name}: {props.description}</table>
+    <div>{singleCow.name}: {singleCow.description}</div>
   );
   }
 
-  export default cowListItem;
+  export default CowListItem;

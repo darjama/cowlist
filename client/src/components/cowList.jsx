@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 
 function CowList(props) {
   const cowsList = props.cows;
-  const listItems = cowList.map((cow) => {
-    <li key={cow.id.toString()}>
-      {cow.name}
+  const listItems = cowsList.map((moo) => {
+    <li key={moo.id.toString()}>
+      {moo.name}
     </li>
     }
   );
