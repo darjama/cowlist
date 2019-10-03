@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from './react.development';
+import ReactDOM from './react-dom.development';
 
 function CowListItem(props) {
   const singleCow = props.cow;
   return (
-    <h4>{singleCow.name}: {singleCow.description} </h4>
+    <table>{props.singleCow.name}: {props.description}</table>
   );
   }
+
+  export default cowListItem;

@@ -34,7 +34,3 @@ $.ajax({
 
 
   });
-
-//}
-
-//ReactDOM.render(cowList, document.getElementById('list'));
