@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import CowList from './cowList.jsx';
-import CowListItem from  './cowListItem.jsx';
+import DisplayCow from  './displayCow.jsx';
 
 class CowListing extends React.Component {
   constructor(props) {
@@ -27,10 +25,10 @@ class CowListing extends React.Component {
     console.log(this.state.gottenCows);
     //var gotCows = this.state.gottenCows ? this.state.gottenCows : [{id:1,name:"her",description:"low"}];
     return (
-      <div><div id="cowDescription"><h4><CowListItem  cow={this.state.gottenCows[0]}/></h4></div>
-      <h3>The list of Cows</h3>
+      <div><div id="cowDescription"><h4><DisplayCow  cow={this.state.gottenCows[0]}/></h4></div>
+      <h2>The list of Cows</h2>
       <div id ="list"><h3><CowList cows={this.state.gottenCows}/></h3></div>
-      <div><h3>Add a Cow</h3><br/>
+      <div><h2>Add a Cow</h2><br/>
         <form action="/api/cows" id="cowForm" method="post">
         Name:
         <input type="text" name="name" id="cowFormName"></input><br/>
@@ -44,4 +42,4 @@ class CowListing extends React.Component {
 
 }
 
-export default CowListing;
+export default CowListing.jsx;

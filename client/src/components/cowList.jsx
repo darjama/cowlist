@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+function CowListItem(props) {
+  const mooer = props.value;
+  console.log(props.value);
+  return (
+    <li>
+      {mooer}
+    </li>
+  );
+};
 
 function CowList(props) {
   const cowsList = props.cows;
   const listItems = cowsList.map((moo) => {
-    <li key={moo.id.toString()}>
-      {moo.name}
-    </li>
+    <CowListItem key={moo.id.toString()} value={moo.name} />
     }
   );
   return (
