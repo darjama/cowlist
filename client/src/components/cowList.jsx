@@ -1,16 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+function CowListItem(props) {
+  return<li onClick={() => (props.getDetails(props.mooer))}>{props.mooer.name}</li>;
+}
 
 function CowList(props) {
   const cowsList = props.cows;
-  const listItems = cowsList.map((moo) => {
-    <li key={moo.id.toString()}>
-      {moo.name}
-    </li>
-    }
-  );
   return (
-    <ul>{listItems}</ul>
+    <ul>
+    {cowsList.map((moo) =>
+    <CowListItem key={moo.id.toString()}
+      mooer={moo} getDetails={props.getDetails}/>
+    )}
+    </ul>
+
   );
 };
 

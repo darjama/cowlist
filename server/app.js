@@ -10,7 +10,7 @@ var bodyParser = require('body-parser')
 var hostname = 'localhost';
 var port = 3000;
 
-app.use(express.static('../client'))
+app.use(express.static('client'))
 app.use(bodyParser.json());
 
 app.get('/api/cows', (req, res) => {models.getAllCows(req, res)} );
@@ -19,6 +19,6 @@ app.post('/api/cows', (req, res) => {
   console.log("reqbody->",req.body);
   models.addCow(req, res)} );
 
-app.get("/", (req,res) => res.sendFile(path.resolve('../client/dist/index.html')));
+app.get("/", (req,res) => res.sendFile(path.resolve('client/dist/index.html')));
 
 app.listen(port, () => console.log(`node.js server listening on port ${port}`));
