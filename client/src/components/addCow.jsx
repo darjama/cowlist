@@ -9,7 +9,6 @@ class AddCow extends React.Component {
 
     send(){
       var reqObj = {name: this.state.newCowName, description: this.state.newCowDesc};
-      console.log('reqObj: ',reqObj);
       this.props.submitForm(reqObj);
     }
 

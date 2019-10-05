@@ -18,7 +18,6 @@ class App extends React.Component {
     $.get( "/api/cows", ( data ) =>
     this.setState({
       gottenCows: data
-      success: console.log("got cows")
     })
   )};
 
