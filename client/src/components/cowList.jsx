@@ -4,6 +4,7 @@ function CowListItem(props) {
 
 function CowList(props) {
   const cowsList = props.cows;
+
   return (
     <ul>
     {cowsList.map((moo) =>
