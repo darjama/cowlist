@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CowList from './components/cowList.jsx';
 import CowDetails from  './components/cowDetails.jsx';
-import CowListing from './components/cowListing.jsx'
+import App from './components/app.jsx'
 
-ReactDOM.render(<CowListing />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
